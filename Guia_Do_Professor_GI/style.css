@@ -1,0 +1,318 @@
+/* =========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* =========================================
+   2. LAYOUT PRINCIPAL (APP CONTAINER)
+   ========================================= */
+.app-container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1000px; /* Limite para PC */
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Faz o conteúdo empurrar o rodapé para baixo */
+}
+
+/* =========================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    padding: 20px;
+    background: linear-gradient(135deg, #2b7de9, #6da6f7);
+    color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* FOTO DO LOGO NO CABEÇALHO (QUADRADA) */
+.header-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px; /* Deixa quadrada com cantos suaves */
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* ABAS DE NAVEGAÇÃO */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 600;
+    padding: 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.tab:hover { color: #2b7de9; }
+
+.tab.active { 
+    color: #2b7de9; 
+    border-bottom: 3px solid #2b7de9;
+}
+
+/* =========================================
+   4. COMPONENTES DO JOGO (CARDS)
+   ========================================= */
+.games-grid {
+    display: grid;
+    padding: 20px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    gap: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+    align-items: flex-start; /* Alinha ao topo para textos longos */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #2b7de9;
+}
+
+/* Ícones dos Jogos */
+.game-icon-img, .game-icon-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.game-icon-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgba(0,0,0,0.6);
+    font-size: 1rem;
+}
+
+.game-info { flex-grow: 1; }
+.game-info h3 { font-size: 1rem; margin-bottom: 5px; }
+.game-info p { font-size: 0.9rem; margin-bottom: 8px; color: #555; }
+
+/* Botão Download */
+.btn-download {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 16px;
+    background-color: #01875f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Tag de Idade */
+.age-tag {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+.age-tag::before { content: '📅 '; font-size: 0.8rem; }
+
+/* =========================================
+   5. COMPONENTE ACCORDION (OBJETIVOS)
+   ========================================= */
+.accordion {
+    background-color: #f8f9fa;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #eee;
+    text-align: left;
+    outline: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.4s;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion.active, .accordion:hover { background-color: #e2e6ea; }
+
+.accordion:after {
+    content: '\002B'; /* + */
+    color: #777;
+    font-weight: bold;
+}
+.accordion.active:after { content: "\2212"; /* - */ }
+
+.panel {
+    padding: 0 10px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-size: 0.85rem;
+    color: #666;
+    text-align: justify;
+    margin-bottom: 10px;
+    border-left: 3px solid #2b7de9;
+}
+
+/* =========================================
+   6. METODOLOGIA E AUTORA
+   ========================================= */
+.methodology-section {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-box p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+.author-section {
+    margin-top: 40px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.author-large-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.author-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2b7de9;
+    margin-bottom: 5px !important;
+}
+
+.author-title {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0 !important;
+}
+
+/* =========================================
+   7. RODAPÉ E BOTÃO FLUTUANTE
+   ========================================= */
+.main-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+.license-area img {
+    margin-top: 10px;
+    border: none;
+}
+
+.license-area a { color: #2b7de9; }
+
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #2b7de9;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 24px;
+    box-shadow: 0 4px 15px rgba(43, 125, 233, 0.4);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+.fab:hover { transform: scale(1.1); }
+
+/* =========================================
+   8. RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 768px) {
+    .app-container { max-width: 100%; }
+    .header-content { border-radius: 0 0 15px 15px; }
+    .games-grid { grid-template-columns: 1fr; }
+    .methodology-section { padding: 20px; }
+    .fab { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 22px; }
+    .game-card { flex-direction: column; align-items: center; text-align: center; }
+}
