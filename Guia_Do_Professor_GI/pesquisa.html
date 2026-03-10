@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa - Guia do Professor</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .form-wrapper {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100%;
+            border: none;
+            min-height: 1200px; /* Ajuste conforme o tamanho do seu form */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <button class="fab" onclick="toggleContrast()" aria-label="Alto Contraste">
+            <span>&#9909;</span> 
+        </button>
+
+        <header>
+            <div class="header-content">
+                <div class="logo-area">
+                    <img src="img/logo.jpg" alt="Logo Guia do Professor" class="header-avatar">
+                    <a href="index.html" style="text-decoration: none; color: white;">
+                        <h1>Guia do Professor<br>Inclusivo</h1>
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="nav-tabs">
+                <a href="index.html" class="tab">Jogos</a>
+                <a href="metodologia.html" class="tab">Metodologia</a>
+                <a href="#" class="tab active">Participar da Pesquisa</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="methodology-section">
+                <h2>Colabore com nossa Pesquisa</h2>
+                <div class="text-box">
+                    <p>Sua experiência é fundamental para o desenvolvimento de práticas mais inclusivas. Por favor, responda ao questionário abaixo:</p>
+                </div>
+
+                <div class="form-wrapper">
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdcncCsWfdTSziOlpkcEgnu5EpjD_G52-EX_wF_1teCJ5TWZg/viewform?embedded=true" width="640" height="1564" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <p>Desenvolvido como Produto Educacional - UEPB</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
