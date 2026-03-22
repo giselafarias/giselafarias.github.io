@@ -308,6 +308,9 @@ h1 {
 /* =========================================
    8. RESPONSIVIDADE
    ========================================= */
+/* =========================================
+   8. RESPONSIVIDADE
+   ========================================= */
 @media (max-width: 768px) {
     .app-container { max-width: 100%; }
     .header-content { border-radius: 0 0 15px 15px; }
@@ -315,4 +318,24 @@ h1 {
     .methodology-section { padding: 20px; }
     .fab { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 22px; }
     .game-card { flex-direction: column; align-items: center; text-align: center; }
+    
+    /* NOVAS REGRAS PARA "DESENTORTAR" A PÁGINA: */
+    
+    /* 1. Permite que as abas quebrem a linha se não couberem na tela */
+    .nav-tabs { 
+        flex-wrap: wrap; 
+        gap: 10px; 
+        padding: 10px;
+    }
+    
+    /* 2. Diminui a fonte das abas para caberem melhor */
+    .tab { 
+        font-size: 0.95rem; 
+        text-align: center;
+    }
+    
+    /* 3. Reduz a borda branca (padding) em volta do forms no celular */
+    .form-wrapper {
+        padding: 5px;
+    }
 }
