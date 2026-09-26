@@ -48,3 +48,38 @@ for (let i = 0; i < acc.length; i++) {
     } 
   });
 }
+// =========================================
+// MENU RETRÁTIL
+// =========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+
+    dropdownButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+            event.stopPropagation();
+
+            const dropdown = button.parentElement;
+
+            // Fecha os outros menus
+            document.querySelectorAll(".dropdown").forEach(function (item) {
+                if (item !== dropdown) {
+                    item.classList.remove("open");
+                }
+            });
+
+            // Abre ou fecha o menu clicado
+            dropdown.classList.toggle("open");
+        });
+    });
+
+    // Fecha os menus ao clicar fora
+    document.addEventListener("click", function () {
+        document.querySelectorAll(".dropdown").forEach(function (dropdown) {
+            dropdown.classList.remove("open");
+        });
+    });
+
+});

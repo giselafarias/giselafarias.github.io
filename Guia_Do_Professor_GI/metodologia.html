@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodologia - Guia do Professor</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Jogos - Guia do Professor</title>
+    <link rel="stylesheet" href="style.css?v=4">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,22 +15,125 @@
             <span>&#9909;</span> 
         </button>
 
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Materiais de Apoio - Guia do Professor Inclusivo</title>
+
+    <link rel="stylesheet" href="style.css?v=4">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- BOTÃO DE ALTO CONTRASTE -->
+        <button class="fab" onclick="toggleContrast()" aria-label="Alto Contraste">
+            <span>&#9909;</span>
+        </button>
+
+
+        <!-- CABEÇALHO -->
         <header>
+
             <div class="header-content">
+
                 <div class="logo-area">
-                    <img src="img/logo.jpg" alt="Logo Guia do Professor" class="header-avatar">
-                    <a href="index.html" style="text-decoration: none; color: white;">
-                        <h1>Guia do Professor<br>Inclusivo</h1>
-                    </a>
+
+                    <img 
+                        src="img/logo.jpg" 
+                        alt="Logo Guia do Professor"
+                        class="header-avatar"
+                    >
+
+                    <h1>
+                        Guia do Professor<br>
+                        Inclusivo
+                    </h1>
+
                 </div>
+
             </div>
-            
+
+
+            <!-- MENU PRINCIPAL -->
             <nav class="nav-tabs">
-                <a href="index.html" class="tab">Jogos</a>
-                <a href="metodologia.html" class="tab">Metodologia</a>
-                <a href="pesquisa.html" class="tab">Pesquisa</a>
+
+                <a href="index.html" class="tab">
+                    INÍCIO
+                </a>
+
+
+                <!-- ÁREA DO PROFESSOR -->
+                <div class="dropdown">
+
+                    <button 
+                        class="tab dropdown-btn" 
+                        type="button"
+                    >
+                        ÁREA DO PROFESSOR ▾
+                    </button>
+
+                    <div class="dropdown-content">
+
+                        <a href="materiais-apoio.html">
+                            Materiais de apoio
+                        </a>
+
+                        <a href="como-utilizar.html">
+                            Como utilizar os recursos
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PESQUISA -->
+                <a href="pesquisa.html" class="tab">
+                    PESQUISA
+                </a>
+
+
+                <!-- SOBRE -->
+                <div class="dropdown">
+
+                    <button 
+                        class="tab dropdown-btn" 
+                        type="button"
+                    >
+                        SOBRE ▾
+                    </button>
+
+                    <div class="dropdown-content">
+
+                        <a href="sobre-introducao.html">
+                            Introdução
+                        </a>
+
+                        <a href="sobre-objetivo.html">
+                            Objetivo
+                        </a>
+
+                        <a href="metodologia.html">
+                            Metodologia
+                        </a>
+
+                        <a href="profei-uepb.html">
+                            PROFEI / UEPB
+                        </a>
+
+                    </div>
+
+                </div>
+
             </nav>
+
         </header>
+
 
         <main>
             <section class="methodology-section">
