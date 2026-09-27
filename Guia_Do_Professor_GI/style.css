@@ -356,7 +356,11 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
 }
-
+.methodology-section h2 {
+    color: #2b7de9;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
 .text-box p {
     margin-bottom: 20px;
     line-height: 1.8;
