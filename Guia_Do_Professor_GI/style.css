@@ -258,7 +258,7 @@ h1 {
 
 
 /* =========================================
-   10. BOTÃO INICIAR
+   10. BOTÕES 
    ========================================= */
 
 .btn-download {
@@ -272,7 +272,18 @@ h1 {
     font-size: 0.8rem;
     font-weight: 600;
 }
-
+.btn-material {
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    padding: 8px 16px;
+    background-color: #01875f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 
 /* =========================================
    11. TAG DE IDADE
